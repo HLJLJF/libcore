@@ -6,6 +6,7 @@ namespace libcore {
 
 class Icmp_Unix : public Icmp{
 public:
+    virtual int OpenScoket();
     virtual int Send(int sock_fd);
     virtual int Receive(int sock_fd,IcmpReceiveData *outData);
 };

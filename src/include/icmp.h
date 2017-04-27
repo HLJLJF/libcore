@@ -15,12 +15,14 @@ public:
 
 class Icmp : public BaseObject{
 public:
+    virtual int OpenScoket() = 0;
     virtual int Send(int sock_fd) = 0;
     virtual int Receive(int sock_fd,IcmpReceiveData *outData) = 0;
 };
 
 class IcmpManage : public StartAndStop {
 public:
+    virtual void SetProtocol(Icmp* ) = 0;
     virtual int Ping(string ip,PingCall call) = 0;
 };
 
